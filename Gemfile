@@ -38,8 +38,8 @@ end
 group :test do
   # gem 'database_cleaner',        '~> 1.5', '>= 1.5.3'
   gem 'factory_girl_rails'#,      '~> 4.7'
-  gem 'simplecov',                '~> 0.12.0',          require: false
-  gem 'shoulda-matchers'#,         '~> 3.1', '>= 3.1.1', require: false
+  gem 'simplecov',                '~> 0.12.0', require: false
+  gem 'shoulda-matchers', require: false
   gem 'rspec_candy'#,              '~> 0.4.0'
   gem 'rspec-rails'#,              '~> 3.5', '>= 3.5.2'
   gem 'rails-controller-testing'#, '~> 1.0', '>= 1.0.1'

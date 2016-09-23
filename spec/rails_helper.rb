@@ -6,10 +6,12 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/core'
-# require 'shoulda/matchers'
+require 'shoulda/matchers'
+require 'paperclip/matchers'
 # Add additional requires below this line. Rails is not loaded until this point!
 SimpleCov.start 'rails'
 include ActionDispatch::TestProcess
+include Paperclip::Shoulda::Matchers
 require 'bundler/setup'
 ::Bundler.require(:default, :test)
 
