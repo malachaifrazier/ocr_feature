@@ -24,4 +24,15 @@ RSpec.describe Document, type: :model do
     end
   end
 
+  describe 'tags' do
+    it 'should kill tags when doc is killed' do
+      document.tags.create
+      expect(document.tags.count).to eq 1
+
+      expect{
+        document.destroy!
+        }.to change(Tag, :count).by(-1)
+    end
+  end
+
 end

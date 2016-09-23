@@ -15,4 +15,14 @@ class Document < ActiveRecord::Base
       ]
     },
     size: { in: 0..1.megabytes }
+
+  after_create :parse_doc
+
+protected
+
+  def parse_doc
+    # TODO: pull out it’s content, and find the tags.
+      # Document, Content field - store all content from file
+      # Tag, Context field - store the related content from the Document where this tag is found that is one sentence before the tag occurs, to one sentence after the tag occurs
+  end
 end

@@ -10,6 +10,7 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
+    @tags     = @document.tags.build
   end
 
   def edit
@@ -54,8 +55,7 @@ private
     @document = Document.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def document_params
-    params.require(:document).permit(:content, :file, tag_ids: [])
+    params.require(:document).permit(:id, :content, :file, tags_attributes: [:id, :label, :context])
   end
 end
